@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<br>
+<h2> Homework 1</h2>
+<hr>
+<b>These are important scientific questions.</b>
+<br>
+Please enter your name in the field below.
+{{ formfield "name_question"}}
+<br>
+<br>
+<p>Where did you eat in the Mensa today?</p>
+<input type="radio" name="lunch" value="1" /> Seezeitteller
+<br>
+<input type="radio" name="lunch" value="2" /> KombinierBar
+<br>
+<input type="radio" name="lunch" value="3" /> Hin & Weg
+<br>
+<input type="radio" name="lunch" value="4" /> Al Studente (vegetarian)
+<br>
+<input type="radio" name="lunch" value="5" /> Al Studente (meat)
+<br>
+<br>
+If you had the Seezeitteller, you had the chance to get multiple portions. How many did you get?
+{{ formfield "seezeit_question"}}
+
+<br>
+
+
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Next
+</button>
+
+{% endblock %}

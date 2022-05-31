@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block app_scripts %}
+<script>
+    //alternative version of catching the device type, all in pixels
+    var screen_width = screen.width;
+    document.getElementById('screen_width').value = screen_width;
+    var screen_height = screen.height;
+    document.getElementById('screen_height').value = screen_height;
+
+</script>
+{% endblock %}

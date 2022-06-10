@@ -1,0 +1,58 @@
+
+{%block style %}
+<!--this block is used to do the styling-->
+
+<!--set display none, that the title you use just appears in tab but not on page, so the page title and the tab-title
+    can be different -->
+
+<!--the extable will be needed to do the styling of the table that you will see later in this file, color, width,
+border-style, border width etc. can be changed here-->
+<style>
+.otree-title{
+    background: white;
+    text-align: center;
+    display:none;
+}
+
+    .extable th {  width:150px; background-color: lightblue; padding: 6px; border: solid 1px ;}
+    .extable td { padding: 6px; border: solid 1px ; background-color: lightgrey }
+
+
+
+</style>
+
+{% endblock %}
+
+{% block title %}
+<!--this is the title that will appear in the tab-->
+    Brunch
+{% endblock %}
+
+{% block content %}
+<!-- <br> will start a new line, also possible to set more <br>'s below each other-->
+<br>
+<!--this is the title that will appear on top of your page-->
+<h1>Brunch is Life</h1>
+<p>
+You may have just had lunch but what do you think about brunch? It is the perfect joyful social meal to
+have with your loved ones.
+</p>
+
+<hr>
+
+
+<!--Adding images -->
+<h3>Brunch Inspiration</h3>
+<p>Have a look at this picture of our most recent brunch to get some inspiration for  your next brunch menu!</p>
+
+<!--code for adding the image, make sure the image is stored at the right place-->
+<img   width="50%" height="50%" src="{% static 'images/brunch.png' %}" />
+<br>
+
+
+<hr>
+<!--this is how you code the next button in otree-->
+ <button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Next
+</button>
+{% endblock %}

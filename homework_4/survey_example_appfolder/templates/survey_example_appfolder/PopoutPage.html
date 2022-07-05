@@ -1,0 +1,69 @@
+{% extends "global/GlobalPopout.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+    //Get variables needed for our popout
+    var lunchYes = document.getElementById('lunchYes');
+    var divYes = document.getElementById('divYes');
+    var lunchNo = document.getElementById('lunchNo');
+    var divNo = document.getElementById('divNo');
+
+    // POPOUT: we are going to create a popout function that displays text only if some value is given in another question
+    function popout() {
+        console.log('searching for the elements')
+        //the conditions and the implementation of showing the text
+        if (lunchYes.checked == true) {
+            console.log('yes');
+            divNo.style.display = "none";
+            divYes.style.display = "block";
+        }
+        if (lunchNo.checked == true) {
+            console.log('no');
+            divYes.style.display = "none";
+            divNo.style.display = "block";
+        }
+    }
+</script>
+{% endblock %}
+
+
+
+{% block content %}
+<!-- this is how we implement a time taking variable  -->
+<input id="time_popout" type="hidden" name="time_popout" />
+<br>
+<h2> Homework 3 </h2>
+<hr>
+On this page, we would like to hear about your experience!
+
+<div>
+    <p><b>Did you enjoy your lunch today?</b></p>
+    <div><input id="lunchYes" type="radio" name="popout_question" value="1" onclick="popout()" /> Yes</div>
+    <div><input id="lunchNo" type="radio" name="popout_question" value="2" onclick="popout()" /> No</div>
+    <br>
+</div>
+
+<!-- question asked if they enjoyed lunch-->
+<div id="divYes" style="display: none">
+    <p>What did you like about it?</p>
+    <input type="text" name="popout_yes" />
+    <br>
+</div>
+
+<!-- question asked if they did not enjoy lunch -->
+<div id="divNo" style="display: none">
+    <p>What did you not like about it?</p>
+    <input type="text" name="popout_no" />
+    <br>
+</div>
+
+<br>
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Next
+</button>
+
+{% endblock %}
